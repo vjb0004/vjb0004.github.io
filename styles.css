@@ -54,6 +54,20 @@ nav a {
   margin-right: 1.5rem;
   text-decoration: none;
   font-weight: bold;
+   nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+   header nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+header nav a {
+  display: inline-block;
+}
+
 }
 
 /* =========================
@@ -78,11 +92,6 @@ footer {
    nav a {
   text-decoration: none;
   font-weight: 500;
-}
-
-nav a:hover,
-nav a:focus {
-  text-decoration: underline;
 }
 
 }
