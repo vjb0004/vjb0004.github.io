@@ -1,3 +1,4 @@
+
 /* =========================
    CSS VARIABLES (COLORS)
    ========================= */
@@ -14,6 +15,12 @@
 /* =========================
    GLOBAL STYLES
    ========================= */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -35,35 +42,68 @@ a:hover {
    LAYOUT
    ========================= */
 
+/* A centered container so wide screens don’t feel empty */
+.container {
+  max-width: 1100px;         /* adjust 1000–1200px to taste */
+  padding-inline: 24px;
+  margin-inline: auto;
+}
+
 header {
   background-color: var(--background-soft);
-  padding: 2rem;
+  padding: 12px 0;           /* tightened from 2rem to reduce empty space */
 }
 
 main {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px 24px;        /* slightly tighter than 2rem */
 }
 
 /* =========================
-   NAVIGATION
-   ========================= */
-/* =========================
-   NAVIGATION
+   NAVIGATION / HEADER ROW
    ========================= */
 
+/* Row wrapper inside header for logo + nav on one line
+   (HTML: <div class="container header-row"> ... ) */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* If you’re using .site-header somewhere else, keep it tidy */
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 0;                /* header padding is handled on <header> */
+  color: inherit;
+}
+
+/* Navbar logo styling */
+.nav-logo img,
+.site-logo img {
+  height: 56px;              /* adjust 48–72px depending on your logo */
+  width: auto;
+  display: block;            /* Removes inline spacing */
+  margin: 0;                 /* Remove extra margins */
+}
+
+/* Navigation */
 header nav {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  justify-content: flex-end; /* sits to the right of the logo */
+  gap: 1.2rem;               /* tighter spacing between links */
+  margin: 0;                 /* remove top margin that was creating a gap */
 }
 
 header nav a {
   text-decoration: none;
   font-weight: 600;
   color: var(--accent-strong);
+  padding: 6px 4px;          /* small hit area */
+  border-radius: 6px;
 }
 
 header nav a:hover,
@@ -71,21 +111,6 @@ header nav a:focus {
   text-decoration: underline;
   color: var(--accent-warm);
 }
-.site-header {
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  color: white;
-}
-
-/* Navbar logo styling */
-.nav-logo img {
-    height: 20px;       /* Adjust the size of your logo */
-    display: block;     /* Removes extra inline spacing */
-    margin: 5px 10px;   /* Top/bottom 5px, left/right 10px padding around the logo */
-}
-}
-
 
 /* =========================
    VISUAL ELEMENT (Style C)
@@ -93,8 +118,8 @@ header nav a:focus {
 
 .hero {
   border-left: 6px solid var(--accent-warm);
-  padding-left: 1.5rem;
-  margin-bottom: 3rem;
+  padding-left: 1rem;        /* was 1.5rem */
+  margin-bottom: 1.75rem;    /* was 3rem */
 }
 
 /* =========================
@@ -106,9 +131,5 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   text-align: center;
-   nav a {
-  text-decoration: none;
-  font-weight: 500;
 }
 
-}
