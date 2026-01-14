@@ -75,4 +75,14 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   text-align: center;
+   nav a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
 }
