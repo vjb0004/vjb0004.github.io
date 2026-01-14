@@ -71,6 +71,23 @@ header nav a:focus {
   text-decoration: underline;
   color: var(--accent-warm);
 }
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0a2a43; /* optional for contrast */
+  color: white;
+}
+
+.logo {
+  width: 50px;  /* adjust size */
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.logo-link {
+  display: inline-block;
+}
 
 
 /* =========================
