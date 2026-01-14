@@ -49,15 +49,11 @@ main {
 /* =========================
    NAVIGATION
    ========================= */
+/* =========================
+   NAVIGATION
+   ========================= */
 
-nav a {
-  margin-right: 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-   nav a:hover,
-nav a:focus {
-  text-decoration: underline;
-   header nav {
+header nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -65,10 +61,17 @@ nav a:focus {
 }
 
 header nav a {
-  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-strong);
 }
 
+header nav a:hover,
+header nav a:focus {
+  text-decoration: underline;
+  color: var(--accent-warm);
 }
+
 
 /* =========================
    VISUAL ELEMENT (Style C)
