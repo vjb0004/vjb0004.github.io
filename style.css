@@ -1,14 +1,78 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
-  margin: 2rem;
-  color: #222;
+/* =========================
+   CSS VARIABLES (COLORS)
+   ========================= */
+
+:root {
+  --background-main: #F2F2F0;
+  --background-soft: #C5D3D9;
+  --accent-muted: #A3B2BF;
+  --text-main: #3A2A22;   /* darker than 734E39 for contrast */
+  --accent-warm: #8C6B58;
+  --accent-strong: #734E39;
 }
 
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: var(--background-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-strong);
+}
+
+a:hover {
+  color: var(--accent-warm);
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
 header {
+  background-color: var(--background-soft);
+  padding: 2rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   VISUAL ELEMENT (Style C)
+   ========================= */
+
+.hero {
+  border-left: 6px solid var(--accent-warm);
+  padding-left: 1.5rem;
   margin-bottom: 3rem;
 }
 
-h1 {
-  font-size: 2.5rem;
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  background-color: var(--background-soft);
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
