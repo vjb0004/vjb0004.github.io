@@ -218,7 +218,7 @@ main section {
 }
 .portfolio-item img {
   width: 100%;
-  max-width: 420px;   /* adjust if you want slightly larger/smaller */
+  max-width: 360px;   /* adjust if you want slightly larger/smaller */
   height: auto;
   display: block;
   margin: 0 auto;
