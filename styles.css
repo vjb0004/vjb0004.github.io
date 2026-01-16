@@ -42,7 +42,7 @@ a:hover {
 }
 
 /* =========================
-   SITE BANNER
+   OPTIONAL SITE BANNER
    ========================= */
 
 .site-banner {
@@ -65,73 +65,66 @@ a:hover {
 }
 
 /* =========================
-   HEADER / NAV BAR
+   HEADER / NAV BAR (CENTERED)
    ========================= */
 
-header {
-  background-color: var(--background-soft);
-  padding: 14px 0;
-}
-
-/* Centers logo + nav together */
-.header-row {
+.site-header {
   display: flex;
-  flex-direction: column;   /* stack logo above nav */
-  align-items: center;      /* center horizontally */
-  gap: 12px;
+  flex-direction: column;     /* stack logo above nav */
+  align-items: center;        /* center everything horizontally */
+  gap: 16px;
+  padding: 24px 0;
+  background-color: var(--background-soft);
 }
 
 /* Logo */
-.site-logo img,
-.nav-logo img {
-  height: 56px;
-  width: auto;
+.logo {
+  max-width: 280px;           /* controls logo size */
+  width: 100%;
+  height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 /* Navigation */
-header nav {
+.site-header nav {
   display: flex;
+  justify-content: center;
   gap: 1.5rem;
 }
 
-header nav a {
+.site-header nav a {
   text-decoration: none;
   font-weight: 600;
   padding: 6px 4px;
   border-radius: 6px;
 }
 
-header nav a:hover,
-header nav a:focus {
+.site-header nav a:hover,
+.site-header nav a:focus {
   text-decoration: underline;
 }
 
 /* =========================
-   MAIN CONTENT
+   MAIN CONTENT (ALWAYS CENTERED)
    ========================= */
 
 main {
   max-width: 900px;
   margin: 0 auto;
   padding: 32px 24px;
-}
-
-/* =========================
-   CENTERED PAGES (Resume / About)
-   ========================= */
-
-.centered-page main {
   text-align: center;
 }
 
-.centered-page main ul,
-.centered-page main ol {
+/* Optional: lists in main content */
+main ul,
+main ol {
   list-style-position: inside;
   padding-left: 0;
 }
 
-.centered-page main section {
+/* Optional: spacing for sections */
+main section {
   margin-bottom: 2rem;
 }
 
