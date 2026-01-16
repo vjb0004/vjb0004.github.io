@@ -42,115 +42,18 @@ a:hover {
 }
 
 /* =========================
-   OPTIONAL SITE BANNER
+   SITE BANNER
    ========================= */
 
 .site-banner {
   width: 100%;
-  height: 300px; /* adjust if needed */
+  height: 400px;
   background-image: url("images/banner.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* =========================
-   LAYOUT
-   ========================= */
-
-.container {
-  max-width: 1100px;
-  padding-inline: 24px;
-  margin-inline: auto;
-}
-
-/* =========================
-   HEADER / NAV BAR (CENTERED)
-   ========================= */
-
-.site-header {
-  display: flex;
-  flex-direction: column;     /* stack logo above nav */
-  align-items: center;        /* center everything horizontally */
-  gap: 16px;
-  padding: 24px 0;
-  background-color: var(--background-soft);
-}
-
-/* Logo */
-.logo {
-  max-width: 280px;           /* controls logo size */
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Navigation */
-.site-header nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.site-header nav a {
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 4px;
-  border-radius: 6px;
-}
-
-.site-header nav a:hover,
-.site-header nav a:focus {
-  text-decoration: underline;
-}
-
-/* =========================
-   MAIN CONTENT (ALWAYS CENTERED)
-   ========================= */
-
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 32px 24px;
-  text-align: center;
-}
-
-/* Optional: lists in main content */
-main ul,
-main ol {
-  list-style-position: inside;
-  padding-left: 0;
-}
-
-/* Optional: spacing for sections */
-main section {
-  margin-bottom: 2rem;
-}
-
-/* =========================
-   VISUAL ELEMENT
-   ========================= */
-
-.hero {
-  border-left: 6px solid var(--accent-warm);
-  padding-left: 1rem;
-  margin-bottom: 1.75rem;
-}
-/* =========================
-   SITE BANNER (RESPONSIVE)
-   ========================= */
-
-.site-banner {
-  width: 100%;
-  height: 400px;                 /* default desktop height */
-  background-image: url("images/banner.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Mobile-friendly adjustments */
 @media screen and (max-width: 768px) {
   .site-banner {
     height: 250px;
@@ -164,7 +67,7 @@ main section {
 }
 
 /* =========================
-   LOGO (CENTERED AND RESPONSIVE)
+   HEADER / NAV BAR (CENTERED)
    ========================= */
 
 .site-header {
@@ -176,16 +79,15 @@ main section {
   background-color: var(--background-soft);
 }
 
-/* Logo scales with screen size */
+/* Logo */
 .logo {
-  width: 250px;        /* default desktop width */
-  max-width: 90%;      /* never overflow container */
+  width: 250px;       
+  max-width: 90%;     
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-/* Smaller screens: scale logo down */
 @media screen and (max-width: 768px) {
   .logo {
     width: 180px;
@@ -216,23 +118,68 @@ main section {
 .site-header nav a:focus {
   text-decoration: underline;
 }
-.portfolio-item img {
-  width: 100%;
-  max-width: 360px;   /* adjust if you want slightly larger/smaller */
-  height: auto;
-  display: block;
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+main {
+  max-width: 900px;
   margin: 0 auto;
-}
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  padding: 32px 24px;
+  text-align: center;
 }
 
+main ul,
+main ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   HERO / VISUAL ELEMENTS
+   ========================= */
+
+.hero {
+  border-left: 6px solid var(--accent-warm);
+  padding-left: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+/* =========================
+   PORTFOLIO GRID
+   ========================= */
+
+.portfolio {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Desktop grid: 2 columns on screens 700px and up */
+@media (min-width: 700px) {
+  .portfolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Portfolio items */
 .portfolio-item {
   text-align: center;
 }
 
+/* Portfolio images */
+.portfolio-item img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 /* =========================
    FOOTER
