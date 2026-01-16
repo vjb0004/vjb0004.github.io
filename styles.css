@@ -216,6 +216,13 @@ main section {
 .site-header nav a:focus {
   text-decoration: underline;
 }
+.portfolio-item img {
+  width: 100%;
+  max-width: 420px;   /* adjust if you want slightly larger/smaller */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 
 /* =========================
    FOOTER
