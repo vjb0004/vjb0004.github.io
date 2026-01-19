@@ -189,6 +189,32 @@ main section {
   margin-top: 0.25rem;
   font-size: 1.25rem;
 }
+/* =========================
+   META-ANALYSIS BUTTON
+   ========================= */
+
+.memo-link a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: var(--accent-strong);
+  border: 2px solid var(--accent-strong);
+  border-radius: 999px; /* pill-style button */
+
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.memo-link a:hover,
+.memo-link a:focus {
+  background-color: var(--accent-strong);
+  color: #ffffff;
+}
+
 
 
 /* =========================
