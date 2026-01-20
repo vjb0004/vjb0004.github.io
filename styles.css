@@ -354,6 +354,10 @@ main section {
     text-decoration: none;
   }
 }
+/* Left-justify resume page only */
+.resume-page {
+  text-align: left;
+}
 /* =========================
    FOOTER
    ========================= */
