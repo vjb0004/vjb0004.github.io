@@ -220,9 +220,140 @@ main section {
   gap: 1.5rem;
   flex-wrap: wrap;  /* <--- allows links to wrap on small screens */
 }
+/* =========================
+   RESUME PAGE STYLES
+   ========================= */
 
+.resume-page {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text-main);
+}
 
+/* Header name + contact */
+.resume-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
+}
 
+.resume-contact {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Section spacing */
+.resume-section {
+  margin-top: 2.5rem;
+}
+
+.resume-section h2 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--accent-muted);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Resume items */
+.resume-item {
+  margin-bottom: 1.75rem;
+}
+
+.resume-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.resume-meta {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.resume-focus {
+  font-size: 0.95rem;
+}
+
+/* Lists */
+.resume-page ul {
+  padding-left: 1.2rem;
+}
+
+.resume-page li {
+  margin-bottom: 0.4rem;
+}
+
+/* =========================
+   SKILLS GRID
+   ========================= */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-grid ul {
+  list-style-type: disc;
+}
+
+/* =========================
+   PDF DOWNLOAD BUTTON
+   ========================= */
+
+.resume-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.pdf-button {
+  background-color: var(--accent-strong);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pdf-button:hover {
+  background-color: var(--accent-warm);
+}
+
+/* =========================
+   PRINT STYLES
+   ========================= */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  nav,
+  .site-header,
+  .resume-actions {
+    display: none;
+  }
+
+  .resume-page {
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
 /* =========================
    FOOTER
    ========================= */
