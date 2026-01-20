@@ -324,6 +324,11 @@ main section {
 .pdf-button:hover {
   background-color: var(--accent-warm);
 }
+.pdf-button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
 
 /* =========================
    PRINT STYLES
