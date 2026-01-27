@@ -363,6 +363,11 @@ main section {
 .resume-page {
   text-align: left;
 }
+/* Research page text alignment */
+.research-summary {
+  text-align: left;
+}
+
 /* =========================
    FOOTER
    ========================= */
