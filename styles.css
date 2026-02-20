@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%; /* NEW: for flex footer layout */
 }
 
 body {
@@ -31,6 +32,14 @@ body {
   background-color: var(--background-main);
   color: var(--text-main);
   line-height: 1.6;
+
+  display: flex;           /* NEW: enables sticky footer */
+  flex-direction: column;  /* NEW: enables sticky footer */
+  min-height: 100vh;       /* NEW: ensures footer stays at bottom */
+}
+
+main {
+  flex: 1; /* NEW: allows footer to push down naturally */
 }
 
 a {
@@ -77,6 +86,11 @@ a:hover {
   gap: 16px;
   padding: 16px 0;
   background-color: var(--background-soft);
+
+  /* NEW: sticky header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* Logo */
@@ -105,6 +119,7 @@ a:hover {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;  /* allows links to wrap on small screens */
 }
 
 .site-header nav a {
@@ -180,6 +195,7 @@ main section {
   display: block;
   margin: 0 auto;
 }
+
 .artifact-link {
   margin-top: 0.75rem;
   font-weight: 600;
@@ -189,6 +205,7 @@ main section {
   margin-top: 0.25rem;
   font-size: 1.25rem;
 }
+
 /* =========================
    META-ANALYSIS BUTTON
    ========================= */
@@ -214,12 +231,7 @@ main section {
   background-color: var(--accent-strong);
   color: #ffffff;
 }
-.site-header nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;  /* <--- allows links to wrap on small screens */
-}
+
 /* =========================
    RESUME PAGE STYLES
    ========================= */
@@ -324,6 +336,7 @@ main section {
 .pdf-button:hover {
   background-color: var(--accent-warm);
 }
+
 .pdf-button {
   display: inline-block;
   text-decoration: none;
@@ -359,10 +372,12 @@ main section {
     text-decoration: none;
   }
 }
+
 /* Left-justify resume page only */
 .resume-page {
   text-align: left;
 }
+
 /* Research page text alignment */
 .research-summary {
   text-align: left;
