@@ -1,7 +1,6 @@
 /* =========================
    CSS VARIABLES (COLORS)
    ========================= */
-
 :root {
   --background-main: #F2F2F0;
   --background-soft: #C5D3D9;
@@ -14,7 +13,6 @@
 /* =========================
    GLOBAL RESET
    ========================= */
-
 *,
 *::before,
 *::after {
@@ -23,7 +21,7 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%; /* NEW: for flex footer layout */
+  height: 100%; /* for sticky footer */
 }
 
 body {
@@ -33,13 +31,13 @@ body {
   color: var(--text-main);
   line-height: 1.6;
 
-  display: flex;           /* NEW: enables sticky footer */
-  flex-direction: column;  /* NEW: enables sticky footer */
-  min-height: 100vh;       /* NEW: ensures footer stays at bottom */
+  display: flex;           /* sticky footer layout */
+  flex-direction: column;  
+  min-height: 100vh;       
 }
 
 main {
-  flex: 1; /* NEW: allows footer to push down naturally */
+  flex: 1; /* allows footer to push down */
 }
 
 a {
@@ -53,7 +51,6 @@ a:hover {
 /* =========================
    SITE BANNER
    ========================= */
-
 .site-banner {
   width: 100%;
   height: 600px;
@@ -64,21 +61,16 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .site-banner {
-    height: 250px;
-  }
+  .site-banner { height: 250px; }
 }
 
 @media screen and (max-width: 480px) {
-  .site-banner {
-    height: 180px;
-  }
+  .site-banner { height: 180px; }
 }
 
 /* =========================
-   HEADER / NAV BAR (CENTERED)
+   HEADER / NAV BAR
    ========================= */
-
 .site-header {
   display: flex;
   flex-direction: column;
@@ -87,7 +79,6 @@ a:hover {
   padding: 16px 0;
   background-color: var(--background-soft);
 
-  /* NEW: sticky header */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -102,24 +93,15 @@ a:hover {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  .logo {
-    width: 180px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .logo {
-    width: 140px;
-  }
-}
+@media screen and (max-width: 768px) { .logo { width: 180px; } }
+@media screen and (max-width: 480px) { .logo { width: 140px; } }
 
 /* Navigation */
 .site-header nav {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;  /* allows links to wrap on small screens */
+  flex-wrap: wrap;
 }
 
 .site-header nav a {
@@ -137,7 +119,6 @@ a:hover {
 /* =========================
    MAIN CONTENT
    ========================= */
-
 main {
   max-width: 900px;
   margin: 0 auto;
@@ -158,7 +139,6 @@ main section {
 /* =========================
    HERO / VISUAL ELEMENTS
    ========================= */
-
 .hero {
   border-left: 6px solid var(--accent-warm);
   padding-left: 1rem;
@@ -166,100 +146,94 @@ main section {
 }
 
 /* =========================
-   PORTFOLIO GRID
+   PORTFOLIO GRID / BUTTONS
    ========================= */
-
 .portfolio {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
-/* Desktop grid: 2 columns on screens 700px and up */
 @media (min-width: 700px) {
-  .portfolio {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .portfolio { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Portfolio items */
 .portfolio-item {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-/* Portfolio images */
-.portfolio-item img {
-  width: 100%;
-  max-width: 360px;
-  height: auto;
+/* Portfolio buttons */
+.portfolio-button {
   display: block;
-  margin: 0 auto;
-}
-
-.artifact-link {
-  margin-top: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
   font-weight: 600;
-}
-
-.memo-link {
-  margin-top: 0.25rem;
-  font-size: 1.25rem;
-}
-
-/* =========================
-   META-ANALYSIS BUTTON
-   ========================= */
-
-.memo-link a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
   text-decoration: none;
-
   color: var(--accent-strong);
   border: 2px solid var(--accent-strong);
-  border-radius: 999px; /* pill-style button */
-
+  border-radius: 999px; /* pill style */
   background-color: transparent;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.portfolio-button:hover,
+.portfolio-button:focus {
+  background-color: var(--accent-strong);
+  color: #ffffff;
+}
+
+/* Project memo links below buttons */
+.memo-link a {
+  font-size: 0.9rem;
+  color: var(--accent-strong);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .memo-link a:hover,
 .memo-link a:focus {
+  color: var(--accent-warm);
+  text-decoration: underline;
+}
+
+/* =========================
+   RESUME / PDF BUTTONS
+   ========================= */
+.resume-page, .pdf-button {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.pdf-button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
   background-color: var(--accent-strong);
-  color: #ffffff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pdf-button:hover {
+  background-color: var(--accent-warm);
 }
 
 /* =========================
    RESUME PAGE STYLES
    ========================= */
+.resume-header h1 { font-size: 2.2rem; margin-bottom: 0.25rem; }
+.resume-contact { font-size: 0.95rem; color: #555; }
 
-.resume-page {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--text-main);
-}
-
-/* Header name + contact */
-.resume-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 0.25rem;
-}
-
-.resume-contact {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Section spacing */
-.resume-section {
-  margin-top: 2.5rem;
-}
-
+.resume-section { margin-top: 2.5rem; }
 .resume-section h2 {
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -269,127 +243,46 @@ main section {
   margin-bottom: 1rem;
 }
 
-/* Resume items */
-.resume-item {
-  margin-bottom: 1.75rem;
-}
+.resume-item { margin-bottom: 1.75rem; }
+.resume-item h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+.resume-meta { font-size: 0.9rem; font-style: italic; color: #666; margin-bottom: 0.5rem; }
+.resume-focus { font-size: 0.95rem; }
 
-.resume-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.2rem;
-}
-
-.resume-meta {
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.resume-focus {
-  font-size: 0.95rem;
-}
-
-/* Lists */
-.resume-page ul {
-  padding-left: 1.2rem;
-}
-
-.resume-page li {
-  margin-bottom: 0.4rem;
-}
-
-/* =========================
-   SKILLS GRID
-   ========================= */
-
+/* Skills grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
 
-.skills-grid ul {
-  list-style-type: disc;
-}
-
-/* =========================
-   PDF DOWNLOAD BUTTON
-   ========================= */
-
-.resume-actions {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 2rem;
-}
-
-.pdf-button {
-  background-color: var(--accent-strong);
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.pdf-button:hover {
-  background-color: var(--accent-warm);
-}
-
-.pdf-button {
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-}
+.skills-grid ul { list-style-type: disc; }
 
 /* =========================
    PRINT STYLES
    ========================= */
-
 @media print {
-  body {
-    background: white;
-  }
-
-  nav,
-  .site-header,
-  .resume-actions {
-    display: none;
-  }
-
-  .resume-page {
-    margin: 0;
-    padding: 0;
-  }
-
-  .resume-section {
-    page-break-inside: avoid;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
+  body { background: white; }
+  nav, .site-header, .resume-actions { display: none; }
+  .resume-page { margin: 0; padding: 0; }
+  .resume-section { page-break-inside: avoid; }
+  a { color: black; text-decoration: none; }
 }
 
-/* Left-justify resume page only */
-.resume-page {
-  text-align: left;
-}
-
-/* Research page text alignment */
-.research-summary {
-  text-align: left;
-}
+/* Left-justify resume/research pages */
+.resume-page, .research-summary { text-align: left; }
 
 /* =========================
    FOOTER
    ========================= */
-
 footer {
+  width: 100%;
   background-color: var(--background-soft);
-  padding: 1rem;
+  padding: 1rem 0;
   font-size: 0.9rem;
   text-align: center;
+}
+
+footer .footer-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
