@@ -65,24 +65,15 @@ a:hover {
 }
 
 .logo {
-  width: 750px;
-  max-width: 100%;
-  height: auto;
   display: block;
+  width: 90%;
+  max-width: 750px;
+  height: auto;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  .logo {
-    width: 180px;
-  }
 }
-
-@media screen and (max-width: 480px) {
-  .logo {
-    width: 140px;
-  }
-}
+{
 
 .site-header nav {
   display: flex;
