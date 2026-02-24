@@ -1,130 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jasey Herrington | Portfolio</title>
+/* =========================
+   CSS VARIABLES (COLORS)
+   ========================= */
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-</head>
+:root {
+  --background-main: #F2F2F0;
+  --background-soft: #C5D3D9;
+  --accent-muted: #A3B2BF;
+  --text-main: #471f09;
+  --accent-warm: #8C6B58;
+  --accent-strong: #734E39;
+  --button-text: #fff;
+}
 
-<body>
+/* =========================
+   GLOBAL RESET
+   ========================= */
 
-  <!-- Header -->
-  <header class="site-header">
-    <a href="index.html" class="logo-link">
-      <img src="images/banner.png" alt="Jasey Herrington Logo" class="logo">
-    </a>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="resume.html">Resume</a>
-    </nav>
-  </header>
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
 
-  <!-- Main content -->
-  <main>
-    <section>
-      <p>
-        This portfolio showcases selected academic, teaching, and professional work
-        that reflects my approach to clear, ethical, and inclusive communication.
-        
-      </p>
-    </section>
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: var(--background-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    <section class="portfolio">
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: left;
+}
 
-      <!-- MTPC Context Memo -->
-      <div class="portfolio-item">
-        <a href="files/MTPC Context Memo.pdf" target="_blank" class="portfolio-button">
-          MTPC Context Memo
-        </a>
-        <p class="project-context">
-        An overarching reflective document that situates my work within the master’s program, explains my intellectual and professional development, 
-        and provides a concise overview of each portfolio artifact and how it contributes to your evolving scholarly identity.
-        </p>
-        <p class="memo-link">
-          
-        </p>
-      </div>
+/* =========================
+   LINKS
+   ========================= */
 
-      <!-- Culinary Chronicles -->
-      <div class="portfolio-item">
-        <a href="files/Culinary Chronicles.pdf" target="_blank" class="portfolio-button">
-          Culinary Chronicles | ENGL 7000
-        </a>
-        <p class="project-context">
-        Culinary Chronicles is a multimodal project in which we curated recipes from community contributors and shaped them into a rhetorically cohesive collection 
-        that highlights how food, memory, and cultural identity intersect through shared culinary narratives.
-        </p>
-        <p class="memo-link">
-          <a href="files/7000 Meta-Analysis.pdf" target="_blank">Project Memo</a>
-        </p>
-      </div>
+a {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: none;
+}
 
-      <!-- Advising as Pedagogy -->
-      <div class="portfolio-item">
-        <a href="files/advisingpedagogy.pdf" target="_blank" class="portfolio-button">
-          Advising as Pedagogy | ENGL 7870
-        </a>
-        <p class="project-context">
-          An analysis of advising strategies as teaching tools within higher education.
-        </p>
-        <p class="memo-link">
-          <a href="files/7870 Meta-Analysis.pdf" target="_blank">Project Memo</a>
-        </p>
-      </div>
+a:hover,
+a:focus {
+  color: var(--accent-warm);
+  text-decoration: underline;
+}
 
-      <!-- Multilingual Survey -->
-      <div class="portfolio-item">
-        <a href="files/ENGL 7080 Multilingual Survey.pdf" target="_blank" class="portfolio-button">
-          Multilingual Survey Client Design Project | ENGL 7080
-        </a>
-        <p class="project-context">
-          Designed a survey to support language access and inclusivity in diverse classrooms.
-        </p>
-        <p class="memo-link">
-          <a href="files/7080 Meta-Analysis.pdf" target="_blank">Project Memo</a>
-        </p>
-      </div>
+/* =========================
+   HEADER
+   ========================= */
 
-      <!-- Making Sense of SAP -->
-      <div class="portfolio-item">
-        <a href="files/SAPstudy.pdf" target="_blank" class="portfolio-button">
-          Making Sense of SAP | ENGL 7010
-        </a>
-        <p class="project-context">
-          My SAP study on federal financial aid communication analyzes how institutions present Satisfactory Academic Progress policies to students, examining clarity, tone, accessibility, 
-          and rhetorical design in order to evaluate how effectively these high-stakes policies are communicated and how they shape students’ understanding of risk, responsibility, and institutional support.
-        </p>
-        <p class="memo-link">
-          <a href="files/7010 Meta-Analysis.pdf" target="_blank">Project Memo</a>
-        </p>
-      </div>
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  background-color: var(--background-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-      <!-- Pedagogical Intervention -->
-      <div class="portfolio-item">
-        <a href="files/pedagogicalintervention.pdf" target="_blank" class="portfolio-button">
-          A Multi-Vocal Exploration of Advising Pedagogy | ENGL 7040
-        </a>
-        <p class="project-context">
-          Explored multiple perspectives on advising strategies to enhance student learning outcomes.
-        </p>
-        <p class="memo-link">
-          <a href="files/7040 Meta-Analysis.pdf" target="_blank">Project Memo</a>
-        </p>
-      </div>
+.logo {
+  display: block;
+  width: 90%;
+  max-width: 750px;
+  height: auto;
+  margin: 0 auto;
+}
 
-    </section>
-  </main>
+.site-header nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Jasey Herrington</p>
-  </footer>
+.site-header nav a {
+  padding: 6px 4px;
+  border-radius: 6px;
+}
 
-</body>
-</html>
+.site-header nav a:hover,
+.site-header nav a:focus {
+  text-decoration: underline;
+}
+
+/* =========================
+   PORTFOLIO GRID
+   ========================= */
+
+.portfolio {
+  display: grid;
+  gap: 2.5rem;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  .portfolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   PORTFOLIO ITEM CARD
+   ========================= */
+
+.portfolio-item {
+  text-align: center;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.project-context {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #3a2a22;
+  line-height: 1.5;
+}
+
+.memo-link a {
+  font-size: 0.85rem;
+  color: var(--accent-muted);
+  text-decoration: underline;
+}
+
+/* =========================
+   PORTFOLIO BUTTONS
+   ========================= */
+
+.portfolio-button {
+  display: inline-block;
+  width: 100%;
+  max-width: 360px;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--button-text);
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-warm));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.portfolio-button:hover,
+.portfolio-button:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, var(--accent-warm), var(--accent-strong));
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  background-color: var(--background-soft);
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 100%;
+}
