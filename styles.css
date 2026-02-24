@@ -1,3 +1,7 @@
+/* =========================
+   CSS VARIABLES (COLORS)
+   ========================= */
+
 :root {
   --background-main: #F2F2F0;
   --background-soft: #C5D3D9;
@@ -5,9 +9,13 @@
   --text-main: #471f09;
   --accent-warm: #8C6B58;
   --accent-strong: #734E39;
+  --button-text: #fff;
 }
 
-/* GLOBAL RESET */
+/* =========================
+   GLOBAL RESET
+   ========================= */
+
 *,
 *::before,
 *::after {
@@ -25,7 +33,6 @@ body {
   background-color: var(--background-main);
   color: var(--text-main);
   line-height: 1.6;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -39,18 +46,26 @@ main {
   text-align: left;
 }
 
-/* LINKS */
+/* =========================
+   LINKS
+   ========================= */
+
 a {
   color: var(--accent-strong);
-  font-weight: 600; /* makes links bold by default */
+  font-weight: 600;
+  text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: var(--accent-warm);
   text-decoration: underline;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+   ========================= */
+
 .site-header {
   display: flex;
   flex-direction: column;
@@ -58,7 +73,6 @@ a:hover {
   gap: 16px;
   padding: 16px 0;
   background-color: var(--background-soft);
-
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -72,9 +86,6 @@ a:hover {
   margin: 0 auto;
 }
 
-}
-{
-
 .site-header nav {
   display: flex;
   justify-content: center;
@@ -83,7 +94,6 @@ a:hover {
 }
 
 .site-header nav a {
-  text-decoration: none;
   padding: 6px 4px;
   border-radius: 6px;
 }
@@ -93,11 +103,15 @@ a:hover {
   text-decoration: underline;
 }
 
-/* PORTFOLIO GRID */
+/* =========================
+   PORTFOLIO GRID
+   ========================= */
+
 .portfolio {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   width: 100%;
+  padding-top: 1rem;
 }
 
 @media (min-width: 700px) {
@@ -106,52 +120,70 @@ a:hover {
   }
 }
 
+/* =========================
+   PORTFOLIO ITEM CARD
+   ========================= */
+
 .portfolio-item {
   text-align: center;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
-/* Portfolio main project buttons (keep if you still want these styled) */
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.project-context {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #3a2a22;
+  line-height: 1.5;
+}
+
+.memo-link a {
+  font-size: 0.85rem;
+  color: var(--accent-muted);
+  text-decoration: underline;
+}
+
+/* =========================
+   PORTFOLIO BUTTONS
+   ========================= */
+
 .portfolio-button {
   display: inline-block;
   width: 100%;
   max-width: 360px;
-  padding: 1rem 1.25rem;
-  font-size: 1rem;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--accent-strong);
-  border: 2px solid var(--accent-strong);
-  border-radius: 999px;
-  background-color: transparent;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--button-text);
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-warm));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .portfolio-button:hover,
 .portfolio-button:focus {
-  background-color: var(--accent-strong);
-  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, var(--accent-warm), var(--accent-strong));
 }
 
-.project-context {
-  font-size: 0.95rem;
-  margin-top: 0.25rem;
-  color: #3a2a22;
-}
+/* =========================
+   FOOTER
+   ========================= */
 
-/* META-ANALYSIS LINKS (no button styling) */
-.memo-link {
-  margin-top: 0.5rem;
-}
-
-.memo-link a {
-  font-weight: 700; /* bold */
-  text-decoration: underline; /* optional — remove if you want cleaner */
-  padding: 0;
-  border: none;
-  background: none;
-}
-
-/* FOOTER */
 footer {
   background-color: var(--background-soft);
   padding: 1rem;
