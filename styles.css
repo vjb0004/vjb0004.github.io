@@ -149,7 +149,7 @@ a:focus {
 
 .memo-link a {
   font-size: 0.85rem;
-  color: var(--accent-muted);
+  color: #3c4f67;
   text-decoration: underline;
 }
 
