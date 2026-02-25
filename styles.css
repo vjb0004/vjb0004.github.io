@@ -440,6 +440,13 @@ a:focus {
     padding: 1.75rem 1rem 2.5rem;
   }
 }
+.hero {
+  padding-bottom: 2rem;   /* reduce space under hero */
+}
+
+.research-summary {
+  padding-top: 1.5rem;    /* reduce space above research */
+}
 
 /* =========================
    FOOTER
