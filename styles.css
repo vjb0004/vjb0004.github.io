@@ -118,7 +118,6 @@ a:focus {
   .portfolio {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
 /* =========================
    PORTFOLIO ITEM CARD
