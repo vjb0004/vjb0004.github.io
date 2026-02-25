@@ -306,6 +306,140 @@ a:focus {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   RESUME PAGE POLISH
+   ========================= */
+
+.resume-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.25rem 1.25rem 3rem;
+}
+
+.resume-header {
+  margin-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.resume-header h1 {
+  margin: 0 0 0.35rem 0;
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+}
+
+.resume-contact {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.resume-summary {
+  margin: 0;
+  max-width: 75ch;
+}
+
+/* Sections */
+.resume-section {
+  padding-top: 1.35rem;
+  margin-top: 1.35rem;
+  border-top: 1px solid rgba(0,0,0,0.10);
+}
+
+.section-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Experience/Education blocks */
+.resume-item {
+  padding: 0.9rem 0;
+}
+
+.item-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.resume-item h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.resume-meta {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+  white-space: normal;
+}
+
+.resume-item ul {
+  margin: 0.5rem 0 0 1.15rem;
+}
+
+.resume-item li {
+  margin: 0.25rem 0;
+}
+
+/* Core Competencies grid */
+.competency-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.competency-card {
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 14px;
+  padding: 0.95rem 1rem;
+  background: rgba(0,0,0,0.02);
+}
+
+.competency-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.competency-card ul {
+  margin: 0 0 0 1.15rem;
+}
+
+.competency-card li {
+  margin: 0.25rem 0;
+}
+
+/* Little spacing helper for stacked groups inside one card */
+.mt-16 {
+  margin-top: 1rem !important;
+}
+
+/* PDF button polish (keeps your existing class name) */
+.pdf-button {
+  display: inline-block;
+  margin: 0 0 1rem 0;
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.18);
+}
+
+/* Mobile */
+@media (max-width: 780px) {
+  .competency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-page {
+    padding: 1.75rem 1rem 2.5rem;
+  }
+}
 
 /* =========================
    FOOTER
