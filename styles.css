@@ -118,6 +118,7 @@ a:focus {
   .portfolio {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
 /* =========================
    PORTFOLIO ITEM CARD
@@ -164,7 +165,7 @@ a:focus {
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  color: var(--button-text);
+  color: var(--button-text, #ffffff);
   border: none;
   border-radius: 16px;
   background: linear-gradient(135deg, var(--accent-strong), var(--accent-warm));
